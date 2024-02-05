@@ -31,3 +31,6 @@ Include test cases covering all possible outcomes and edge cases, such as:
 - An incomplete game.
 - An invalid game state due to rule violations.
 - An invalid input format.
+
+## Input Constraints
+The input will always be a string.
