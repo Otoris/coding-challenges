@@ -4,9 +4,8 @@ def main(state: str):
     if len(state) != 9:
         return "Error: Invalid input"
     
-    #Check for invalid characters
+    # Check for invalid characters
     if any(char not in 'xo' for char in state):
-        print(state)
         return "Error: Invalid input"
     
     # Validate turn counts
@@ -30,10 +29,12 @@ def main(state: str):
         ]
 
         for winning_board in winning_boards:
+            # Check if all cells in the winning board are the same
             if all(cell == player for cell in winning_board):
                 return True
         return False
-            
+    
+    # Check for winners
     x_winner = check_winner('x')
     o_winner = check_winner('o')
 
@@ -43,10 +44,8 @@ def main(state: str):
         return "X-winner"
     elif o_winner:
         return "O-winner"
-    else:
+    # If we got here, and count total is not 9, then the game is incomplete
+    elif x_count + o_count != 9:
         return "Incomplete"
-
-
-if __name__ == "__main__":
-    main()
-
+    else:
+        return "Tie"

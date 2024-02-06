@@ -61,6 +61,10 @@ class TestMain(unittest.TestCase):
     def test_invalid_input_more_than_nine(self):
         result = main("o,o,o,x,x,x,x,x,x,x,x")
         self.assertEqual(result, "Error: Invalid input")
+    
+    def test_invalid_player_input(self):
+        result = main("x,o,x,o,x,o,x,o,z")
+        self.assertEqual(result, "Error: Invalid input")
 
     # Test for incomplete board
     def test_incomplete_board(self):
@@ -68,8 +72,9 @@ class TestMain(unittest.TestCase):
         self.assertEqual(result, "Incomplete")
 
     def test_tie_board(self):
-        result = main("x,o,x,o,x,x,o,o,x")
+        result = main("x,o,x,x,x,o,o,x,o")
         self.assertEqual(result, "Tie")
-
-if __name__ == "__main__":
-    unittest.main()
+    
+    def test_main_exception(self):
+        with self.assertRaises(Exception):
+            main()
