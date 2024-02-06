@@ -34,3 +34,20 @@ Include test cases covering all possible outcomes and edge cases, such as:
 
 ## Input Constraints
 The input will always be a string.
+
+## Results
+
+Test cases are passing
+
+![Test cases are passing](https://i.imgur.com/5iFihGG.png)
+
+Coverage report
+
+```bash
+Name                                   Stmts   Miss  Cover
+----------------------------------------------------------
+tic_tac_toe_board_state\main.py           28      0   100%
+tic_tac_toe_board_state\test_main.py      51      0   100%
+----------------------------------------------------------
+TOTAL                                     79      0   100%
+```
