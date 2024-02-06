@@ -1,4 +1,7 @@
 # Tic Tac Toe Game State Analyzer
+
+Skip to [Results](#results) and [Setup](#setup)
+
 ## Objective
 Write a program that analyzes the state of a Tic Tac Toe board and returns the game's current state. The board state will be provided as an input string.
 
@@ -50,4 +53,34 @@ tic_tac_toe_board_state\main.py           28      0   100%
 tic_tac_toe_board_state\test_main.py      51      0   100%
 ----------------------------------------------------------
 TOTAL                                     79      0   100%
+```
+
+## Setup
+
+Notes: Tested with Python 3.10 on Windows 11
+
+
+1. Clone the repository
+2. Navigate to the project directory
+3. Setup the virtual environment
+```bash
+python -m venv venv
+```
+4. Activate the virtual environment
+```bash
+source venv/bin/activate
+```
+5. Install the requirements
+```bash
+pip install -r requirements.txt
+```
+6. Configure and run the tests in your VSCode
+7. Or run the tests in the terminal
+```bash
+pytest
+```
+8. For code coverage
+```bash
+coverage run -m pytest
+coverage report
 ```
