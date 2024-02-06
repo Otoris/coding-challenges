@@ -9,13 +9,13 @@ class TestMain(unittest.TestCase):
 
     # Test for x winner with upper and lower character case
     def test_case_difference_with_x_winner(self):
-        result = main("x,,x,O,X,o,x,o,")
+        result = main("x,,x,X,O,,X,o,o")
         self.assertEqual(result, "X-winner")
 
     # Test for two winners
     def test_dual_winner(self):
         result = main("x,o,o,x,o,o,x,x,o")
-        self.assertEqual(result, "Error: Dual winners")
+        self.assertEqual(result, "Error: Two winners")
 
     # Test for vertical winner O
     def test_vertical_o_winner(self):
@@ -44,18 +44,18 @@ class TestMain(unittest.TestCase):
 
     # Test for invalid turns
     def test_invalid_x_zero(self):
-        result = main("o,o,o,o,o,o,o,o,o")
-        self.assertEqual(result, "Error: Invalid input")
+        result = main("o,,,,o,,,,o")
+        self.assertEqual(result, "Error: Invalid turn count")
 
     # Test for invalid turn count o greater than x
     def test_invalid_turn_count_o_greater_than_x(self):
         result = main("o,o,o,o,x,x,,,")
-        self.assertEqual(result, "Error: Invalid input")
+        self.assertEqual(result, "Error: Invalid turn count")
 
      # Test for invalid turn count o less than x
     def test_invalid_turn_count_o_less_than_x(self):
         result = main("o,o,o,x,x,x,x,x,")
-        self.assertEqual(result, "Error: Invalid input")
+        self.assertEqual(result, "Error: Invalid turn count")
 
     # Test for invalid input more than nine
     def test_invalid_input_more_than_nine(self):
