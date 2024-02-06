@@ -22,18 +22,24 @@ def main(state: str):
             [board[0][0], board[0][1], board[0][2]], # Horizontal top
             [board[1][0], board[1][1], board[1][2]], # Horizontal middle
             [board[2][0], board[2][1], board[2][2]], # Horizontal bottom
+            [board[0][0], board[1][0], board[2][0]], # Vertical left
+            [board[0][1], board[1][1], board[2][1]], # Vertical middle
+            [board[0][2], board[1][2], board[2][2]], # Vertical right
+            [board[0][0], board[1][1], board[2][2]], # Diagonal top left to bottom right
+            [board[0][2], board[1][1], board[2][0]]  # Diagonal top right to bottom left
         ]
 
-        for row in winning_boards:
-            if row.count(player) == 3:
+        for winning_board in winning_boards:
+            if all(cell == player for cell in winning_board):
                 return True
-            else:
-                return False
+        return False
             
     x_winner = check_winner('x')
     o_winner = check_winner('o')
 
-    if x_winner:
+    if x_winner and o_winner:
+        return "Error: Two winners"
+    elif x_winner:
         return "X-winner"
     elif o_winner:
         return "O-winner"
