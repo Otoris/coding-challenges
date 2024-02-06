@@ -8,7 +8,7 @@ Write a program that analyzes the state of a Tic Tac Toe board and returns the g
 **Input Format**
 The input string represents the Tic Tac Toe board's rows, from top to bottom, with each cell separated by commas. The board can contain the characters X, O, and blanks (represented by ''). The input can be case-insensitive.
 
-Example: `"X,O,X,O,X,O,X,O,X"`
+Example: `"x,o,x,o,x,o,x,o,x"`
 
 ## Requirements
 Your program should validate the input and then determine the game's state. The possible return strings are as follows:
