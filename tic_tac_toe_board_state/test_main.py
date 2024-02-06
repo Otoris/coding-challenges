@@ -2,9 +2,9 @@ import unittest
 from main import main
 
 class TestMain(unittest.TestCase):
-    # Test for diagonal winner X
+    # Test for horizontal winner X
     def test_x_winner(self):
-        result = main("x,o,x,o,x,o,x,o,x")
+        result = main("x,x,x,o,x,o,o,o,x")
         self.assertEqual(result, "X-winner")
 
     # Test for x winner with upper and lower character case
